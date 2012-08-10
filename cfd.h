@@ -1,17 +1,15 @@
 #import <stdio.h>
+#import <stdlib.h>
 #import <math.h>
+#import <stdbool.h>
 
-struct Vector {
-float x,y;
-}
-struct Point {
-float x,y;
-}
+struct Pointf {
+float x;
+float y;
+};
 
 struct Particle {
-struct Point pos;  //position
-struct Vector vel; //direction
-float mass;
-}
-
-initAtPointWithVelocityAndMass(struct Particle *particle, struct Point p, struct Velocity v, float mass);
+bool isActive;
+struct Pointf pos;
+struct Pointf velocity;
+};
