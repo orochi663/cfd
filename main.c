@@ -1,19 +1,29 @@
 #import "cfd.h"
 
+// -------------------------
+// ----------TODO-----------
+// USE ENVX AND ENVY VARS!!!
+// ----------TODO-----------
+// -------------------------
 
 int main() {
 //Split up env into evenly sized blocks
-float env[10000][10000];
+int envX = 100;
+int envY = 100;
+float env[envX][envY];
 
 //Create particles
-int numParticles = 1000;
+int numParticles = 10;
 struct Particle *p;
 struct Particle particles[numParticles];
+
+printf("allocated particles");
+
 //initialize particles
 /*
-int j,k;
+int j;
 for(j = 0; j <= numParticles; j++) {
-p = &particles[j][k];
+p = &particles[j];
 }
 */
 
@@ -47,6 +57,8 @@ fcount++;
 }
 }
 
+printf("created force map");
+
 //Set up time for integration 
 float lastTime;
 float timeElapsed; // = time() - lastTime;
@@ -73,6 +85,7 @@ angle += M_PI/4;
 }
 }
 //TODO: translate vNew to velocity vector
+//find Δ between each of surrounding 8
 particles[pNum].velocity.x += vNew.x;
 particles[pNum].velocity.y += vNew.y;
 particles[pNum].pos.x += particles[pNum].velocity.x*timeElapsed;
