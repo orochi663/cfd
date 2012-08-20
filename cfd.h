@@ -1,7 +1,7 @@
-#import <stdio.h>
-#import <stdlib.h>
-#import <math.h>
-#import <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdbool.h>
 
 struct Pointf {
 float x;
